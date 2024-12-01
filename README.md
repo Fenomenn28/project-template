@@ -47,3 +47,18 @@
 - Отображение данных в списке.
 - Простая логика удаления.
 
+## Структура проекта
+```
+project-template/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── components/
+│   │   └── EventList.tsx
+│   ├── App.tsx
+│   ├── index.tsx
+│   ├── styles.css
+├── .gitignore
+├── package.json
+├── README.md
+```
