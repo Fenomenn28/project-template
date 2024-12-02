@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-size: 35px;
+  color: #3d5874;
+  margin: 45px 0 25px;
+}
+
+.event-header {
+  margin: 25px 0;
+  padding: 0;
+  font-size: 25px;
+  color: #1d2a38;
+}
+
+.add-events {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.input-event {
+  padding: 0 5px;
+  width: 250px;
+  border-radius: 7px 0 0 7px;
+  border: 1px solid #7E4B95;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: dimgrey;
+}
+
+.input-event:focus {
+  border-color: #3d5874;
+  outline: none;
+}
+
+.input-date {
+  padding: 0 5px;
+  width: 130px;
+  border-radius: 0 7px 7px 0;
+  border: 1px solid #7E4B95;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: dimgrey;
+}
+
+.input-date:focus {
+  border-color: #3d5874;
+  outline: none;
+}
+
+.button-add {
+  padding: 10px;
+  height: 40px;
+  background-color: #7E4B95;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-add:hover {
+  background-color: #6B3D70;
+}
+
+.list-events {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 500px;
+}
+
+.li-item {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  border: 1px solid #7E4B95;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+.li-item:last-child {
+  margin-bottom: 0;
+}
+
+.ivent-item {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  width: 300px;
+}
+
+.item-text {
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: #1d2a38;
+}
+
+.button-remove {
+  padding: 7px;
+  color: #1d2a38;
+  background-color: white;
+  border: 1px solid #7E4B95;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  margin-right: 5px;
+}
+
+.button-remove:hover {
+  color: #6B3D70;
+}
