@@ -27,12 +27,14 @@ const EventList = () => {
   const addTodo = (event: React.FormEvent) => {
     event.preventDefault();
     if (title.length !== 0 && date.length !== 0) {
+      const [year, month, day] = date.split("-"); 
+      const formattedDate = `${day}-${month}-${year}`; 
       setTodos([
         ...todos,
         {
           id: `${uuidv4()}`,  
           title: title,
-          date: date
+          date: formattedDate
         },
       ]);
       setTitle('');
