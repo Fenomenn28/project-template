@@ -1,93 +1,82 @@
-import React, { useState } from "react";
+import {useState} from "react";
 import { v4 as uuidv4 } from "uuid";
 
-interface IEvent {
-  id: string;
-  title: string;
-  date: string;
-}
-
-const initialEvents: IEvent[] = [
+const initialState = [
   {
-    id: uuidv4(),
-    title: "Порадоваться первому дню зимы :)",
-    date: "2024-12-01",
+    id: `${uuidv4()}`,
+    title: 'Проснуться вовремя',
+    date: '27-12-2024'
   },
   {
-    id: uuidv4(),
-    title:
-      "Поблагодарить замечательную команду Яндекс Практикум за возможность окончить проектный месяц!",
-    date: "2024-12-02",
+    id: `${uuidv4()}`,
+    title: 'Сдать проект',
+    date: '27-12-2024'
   },
-  { id: uuidv4(), title: "Спасибо!!!", date: "2024-12-02" },
-];
+  {
+    id: `${uuidv4()}`,
+    title: 'Подготовиться к новому году',
+    date: '28-12-2024'
+  },
+]
 
-export const EventList = () => {
-  const [events, setEvents] = useState<IEvent[]>(initialEvents);
-  const [title, setTitle] = useState<string>("");
-  const [date, setDate] = useState<string>("");
+const EventList = () => {
+  const [todos, setTodos] = useState(initialState); 
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
 
-  const handleAddEvent = (event: React.FormEvent<HTMLFormElement>) => {
+  const addTodo = (event: React.FormEvent) => {
     event.preventDefault();
-    if (title.length > 0 && date.length > 0) {
-      const newEvent: IEvent = {
-        id: uuidv4(),
-        title,
-        date,
-      };
-      setEvents([...events, newEvent]);
-      setTitle("");
-      setDate("");
+    if (title.length !== 0 && date.length !== 0) {
+      setTodos([
+        ...todos,
+        {
+          id: `${uuidv4()}`,  
+          title: title,
+          date: date
+        },
+      ]);
+      setTitle('');
+      setDate('');
     }
   };
 
-  const handleDeleteEvent = (id: string) => {
-    setEvents(events.filter((event) => event.id !== id));
+  const deleteTodo = (id: string) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  return (
+  return(
     <>
-      <h1 className="header">Запланированные мероприятия</h1>
-      <h2 className="event-header">Добавить мероприятие</h2>
-      <form onSubmit={handleAddEvent}>
-        <div className="add-events">
-          <input
-            type="text"
-            placeholder="Название мероприятия"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            className="input-event"
-          />
-          <input
-            type="date"
-            value={date}
-            onChange={(event) => setDate(event.target.value)}
-            className="input-date"
-          />
-          <button type="submit" className="button-add">
-            Добавить
-          </button>
-        </div>
+      <h1 className="h1">Запланировать мероприятие</h1>
+      <form 
+        onSubmit={addTodo} 
+        className="form">
+        <input  
+          onChange={(evt) => setTitle(evt.target.value)} 
+          value={title}  
+          className="input input-title" 
+          placeholder ="Название мероприятия" 
+        />
+        <input 
+          type="date"
+          onChange={(evt) => setDate(evt.target.value)}
+          value={date}
+          className="input input-data"
+          placeholder ="Дата" 
+        />
+        <button type="submit" className="input input-submit">Добавить</button>
       </form>
-      <h2 className="event-header">Список мероприятий</h2>
-      <ul className="list-events">
-        {events.map((event) => (
-          <li key={event.id} className="li-item">
-            <div className="ivent-item">
-              <p className="item-text">{event.title}</p>
-            </div>
-            <div className="item-text">
-              {new Date(event.date).toLocaleDateString("ru-RU")}
-            </div>
-            <button
-              onClick={() => handleDeleteEvent(event.id)}
-              className="button-remove"
-            >
-              Удалить
-            </button>
+      <h2 className="h2">Запланированные мероприятия</h2>
+      <ul className="ul">
+        {todos.map((todo) => (
+          <li className="li" key={todo.id}>
+            <p className="li-title">{todo.title}</p>
+            <p className="li-date">{todo.date}</p>
+            <button onClick={() => deleteTodo(todo.id)} className="button-delete">удалить</button>
           </li>
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
+
+export default EventList

@@ -2,132 +2,117 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 .main {
-  margin: 0 auto;
-  max-width: 800px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.header {
-  font-size: 35px;
-  color: #3d5874;
-  margin: 45px 0 25px;
+.h1 {
+  font-size: 40px;
+  margin: 40px 0 25px 0; 
+  color: #257a9c;
 }
 
-.event-header {
-  margin: 25px 0;
-  padding: 0;
-  font-size: 25px;
-  color: #1d2a38;
+.h2 {
+  font-size: 30px;
+  margin: 40px 0 25px 0; 
+  color: #257a9c;
 }
 
-.add-events {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
+.form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 500px;
 }
 
-.input-event {
-  padding: 0 5px;
-  width: 250px;
-  border-radius: 7px 0 0 7px;
-  border: 1px solid #7E4B95;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  color: dimgrey;
-}
-
-.input-event:focus {
-  border-color: #3d5874;
-  outline: none;
-}
-
-.input-date {
-  padding: 0 5px;
-  width: 130px;
-  border-radius: 0 7px 7px 0;
-  border: 1px solid #7E4B95;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  color: dimgrey;
-}
-
-.input-date:focus {
-  border-color: #3d5874;
-  outline: none;
-}
-
-.button-add {
-  padding: 10px;
+.input {
   height: 40px;
-  background-color: #7E4B95;
-  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin: 0;  
+  border: 1px solid #9249ce; 
+  outline: none; 
+  background-color: white;
+  padding: 0 5px 0 5px;
+}
+
+.input::placeholder {
+  color: rgb(66, 65, 65);
+}
+
+.input-title {
+  border-radius: 10px 0 0 10px;
+  width: 250px;
+}
+
+.input-submit {
+  border-radius: 0 10px 10px 0;
+  background-color: #9249ce;
   border: none;
-  border-radius: 7px;
+  color: white; 
+  height: 42px;
   cursor: pointer;
-  font-size: 14px;
 }
 
-.button-add:hover {
-  background-color: #6B3D70;
+.input-submit:hover {
+  background-color: #6b29a0;
 }
 
-.list-events {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
+.ul {
   width: 500px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.li-item {
-  list-style-type: none;
+.li {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  text-align: left;
-  border: 1px solid #7E4B95;
-  border-radius: 7px;
-  margin-bottom: 5px;
+
+  width: 450px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
-.li-item:last-child {
-  margin-bottom: 0;
-}
-
-.ivent-item {
+.li-title {
+  width: 250px;
   margin: 0;
   padding: 0;
-  padding-left: 5px;
-  width: 300px;
+  overflow-wrap: break-word;
 }
 
-.item-text {
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  color: #1d2a38;
+.li-date {
+  margin: 0;
+  padding: 0;
 }
 
-.button-remove {
-  padding: 7px;
-  color: #1d2a38;
-  background-color: white;
-  border: 1px solid #7E4B95;
-  border-radius: 7px;
+.button-delete{
+  margin: 0;
+  padding: 0;
   cursor: pointer;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  margin-right: 5px;
+  border: none; 
+  background-color: white;
+  font-size: 16px;
+  padding: 10px 0;
 }
 
-.button-remove:hover {
-  color: #6B3D70;
+.button-delete:hover {
+  color: red;
 }
+
